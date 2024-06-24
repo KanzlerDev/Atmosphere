@@ -252,7 +252,6 @@ namespace ams::boot {
             const auto rule_charge_voltage_limit = 4320;
             if (R_FAILED(m_charger_driver.SetChargeVoltageLimit(rule_charge_voltage_limit))) {
                 boot::ShutdownSystem();
-                    boot::ShutdownSystem();
                 
             m_charge_voltage_limit = rule_charge_voltage_limit;
 
@@ -320,14 +319,11 @@ namespace ams::boot {
             }
 
             /* Process charge voltage limit when rule is larger. */
-            if (rule_charge_voltage_limit > cur_charge_voltage_limit) {
-                if (R_FAILED(m_charger_driver.SetChargeVoltageLimit(rule_charge_voltage_limit))) {
+            if (R_FAILED(m_charger_driver.SetChargeVoltageLimit(m_charge_voltage_limit))) {
                     boot::ShutdownSystem();
-                }
-                m_charge_voltage_limit = rule_charge_voltage_limit;
 
-                /* Update start time. */
-                this->UpdateStartTime();
+            /* Update start time. */
+            this->UpdateStartTime();
             }
 
             /* If we're not charging and we expect to reinitialize the charger, do so. */
