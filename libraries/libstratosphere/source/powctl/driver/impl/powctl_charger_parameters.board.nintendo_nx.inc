@@ -71,7 +71,7 @@ constexpr inline const ChargeParameters ChargeParametersForBatteryVersion1 = {
 };
 
 constexpr inline const ChargeParameters ChargeParametersForBatteryVersion2 = {
-     1, 19, 48, 59, 1664, 4320, UnknownXTableForBatteryVersion2, util::size(UnknownXTableForBatteryVersion2),  95.0, 100.4,        ChargeParametersRulesForBatteryVersion2, util::size(ChargeParametersRulesForBatteryVersion2)
+     1, 19, 48, 59, 1664, 4320,                         nullptr,                                           0,  95.0, 100.4,        ChargeParametersRulesForBatteryVersion2, util::size(ChargeParametersRulesForBatteryVersion2)
 };
 
 constexpr inline const ChargeParameters ChargeParametersForBatteryVersion0ForAula = {
