@@ -53,7 +53,7 @@ namespace ams::boot {
                 R_TRY(powctl::SetChargerBoostModeCurrentLimit(m_charger_session, 500));
 
                 /* Set Charger voltage limit to 4320 mV. */
-                R_TRY(powctl::SetChargerChargeVoltageLimit(m_charger_session, 4320));
+                R_TRY(powctl::SetChargerChargeVoltageLimit(m_charger_session, limit));
                 
                 /* Disable hi-z mode. */
                 R_TRY(powctl::SetChargerHiZEnabled(m_charger_session, false));
