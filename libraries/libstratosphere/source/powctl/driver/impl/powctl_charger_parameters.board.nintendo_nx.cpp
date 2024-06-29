@@ -46,7 +46,7 @@ namespace ams::powctl::driver::impl {
             {  60000, 4256, 90.0,  95.7 },
             {  80000, 4240, 89.0,  94.2 },
             { 100000, 4224, 88.0,  93.0 },
-            {    Max, 4192, 85.0,  90.0 },
+            {    Max, 4320, 95.0, 100.4 },
         };
 
         /* Include automatically extracted charger parameters. */
