@@ -486,8 +486,8 @@ namespace ams::boot {
 
         /* Get the charge voltage limit. */
         int charge_voltage_limit_mv;
-        if (boot_reason != spl::BootReason_RtcAlarm2 || charge_parameters.unknown_x_table == nullptr || charge_parameters.x_table_size == 0) {
-            charge_voltage_limit_mv = charge_parameters.default_charge_voltage_limit;
+        if (boot_reason != spl::BootReason_RtcAlarm2) {
+            charge_voltage_limit_mv = 4320;
         } else {
             if (R_FAILED(charger_driver.GetChargeVoltageLimit(std::addressof(charge_voltage_limit_mv)))) {
                 boot::ShutdownSystem();
