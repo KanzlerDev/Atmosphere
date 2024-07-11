@@ -25,8 +25,6 @@ namespace ams::powctl::driver::impl {
         int max_avg_v_cell;
         int min_battery_done_current;
         int max_battery_done_current;
-        float min_unknown_14;
-        float max_unknown_18;
         float min_voltage_fuel_gauge_percentage;
         float max_voltage_fuel_gauge_percentage;
         const PowerState *acceptable_power_states;
@@ -39,12 +37,6 @@ namespace ams::powctl::driver::impl {
         int voltage_clamp;
     };
 
-    struct UnknownParameterX {
-        int _00;
-        int _04;
-        double _08;
-        double _10;
-    };
 
     struct ChargeParameters {
         int temp_min;
@@ -53,10 +45,6 @@ namespace ams::powctl::driver::impl {
         int temp_max;
         int low_voltage_fast_charge_current_limit;
         int default_charge_voltage_limit;
-        const UnknownParameterX *unknown_x_table;
-        size_t x_table_size;
-        double _28;
-        double _30;
         const ChargeParametersRule *rules;
         size_t num_rules;
     };
